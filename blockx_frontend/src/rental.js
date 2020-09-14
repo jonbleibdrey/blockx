@@ -1,5 +1,6 @@
 class Rental{
-    constructor(title, poster, description, genre, rental_price,subscriber_id){
+    constructor(id, title, poster, description, genre, rental_price, subscriber_id){
+    this.id = id
     this.title = title
     this.poster = poster
     this.description = description
@@ -8,5 +9,6 @@ class Rental{
     this.subscriber_id = subscriber_id
     }
 
-    // instance method that is going to render object to the dom
+    // <button class="delete-bttn" data-id=${this.id} onclick="deleteRental()"> Delete Rental </button>   
+    // render subscriber instance method 
 }
