@@ -5,7 +5,7 @@ class SubscribersController < ApplicationController
   def index
     @subscribers = Subscriber.all
 
-    render json: @subscribers
+    render json: @subscribers, include: [:rentals]
   end
 
   # GET /subscribers/1

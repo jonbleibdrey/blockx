@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(resp => resp.json())
         .then(subscribers => {
             for(const subscriber of subscribers){
-                let s = new Subscriber (subscriber.id, subscriber.username, subscriber.email, subscriber.photo )
+                let s = new Subscriber (subscriber.id, subscriber.username, subscriber.email, subscriber.photo, subscriber.rental)
                 s.renderSubscriber()
+                
             }
             
         })
@@ -33,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </h1>
 
         <form>
-           Your Photo URL: <input type="text" id="photo"> <br>   
-           Username: <input type="text" id="username"> <br>   
-           Email: <input type="text" id="email"> <br>
+           Your Photo URL: <input type="text" id="photo" class="form">    
+           Username: <input type="text" id="username" class="form">   
+           Email: <input type="text" id="email"class="form"> 
            <input type="submit" value="Create" > 
-
         </form> 
+       
         <br>
         `
         subscribersForm.addEventListener("submit", subscriberFormSubmission) 
@@ -85,7 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     // read - fetch rentals index
- 
+    function fetchRentals(){
+        fetch(`${BASE_URL}/rentals`)
+        .then(resp => resp.json())
+        .then(rentals => {
+            for(const rental of rentals){
+                let r = new Rental (rental.id, rental.title, rental.poster, rental.description, rental.genre, rental.rental_price, rental.subscriber_id)
+                r.renderRental()
+            }
+            
+        })
+    }
     
 
 

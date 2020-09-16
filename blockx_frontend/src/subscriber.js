@@ -1,33 +1,36 @@
-class Subscriber{
-    constructor(id, username, email, photo){
-    this.id = id
-    this.username = username
-    this.email = email
-    this.photo = photo
- 
-    }
+class Subscriber {
+  constructor(id, username, email, photo) {
+    this.id = id;
+    this.username = username;
+    this.email = email;
+    this.photo = photo;
+  }
 
-
-    renderSubscriber(){
-        let subscriberDiv = document.getElementById("subscribers-container")
-        subscriberDiv.innerHTML += 
-        `
+  renderSubscriber() {
+    let subscriberDiv = document.getElementById("subscribers-container");
+    subscriberDiv.innerHTML += `
+        <div class="sub-info"> 
         <ul>   
-            <li>
+            <li class="sub-text">
             subscriber id:${this.id}
             </li>
-            <li>
-            photo url:${this.photo}
+            <li class="sub-text">
+            <img src="${this.photo}">
             </li>
-            <li>
+            <li class="sub-text">
             Username: ${this.username} 
-            </li>   
-            <li>
+            </li>     
+            <li class="sub-text">
             Email:${this.email}
-            </li>    
+            </li> 
+            <h1>--------------------------</h1>
         </ul> 
+        <div class="delete-button"> 
         <button class="delete-bttn" data-id=${this.id} onclick="deleteSubscriber()"> Delete Subscriber </button>   
-        `
-    }
-    // render subscriber instance method 
+        </div>
+        </div>
+        
+        `;
+  }
+  // render subscriber instance method
 }
