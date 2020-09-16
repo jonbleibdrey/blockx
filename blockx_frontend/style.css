@@ -1,11 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* * {
+
+    
 }
 
 body {
-    background-image: linear-gradient(120deg, #F44336, #FFD54F);
+    background-image: linear-gradient(120deg, black, white);
     color: white;
     font-family: 'poppins', sans-serif;
     min-height: 100vh;
@@ -38,11 +37,7 @@ form button:hover{
     color: white;
 }
 
-.sub-info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .sub-text{
     display: flex;
     justify-content: center;
@@ -53,16 +48,62 @@ form button:hover{
     font-size: 1.5rem;
     width: 400px;
     border: 15px solid gold;
-    padding: 50px;
-    margin: 20px;
+    padding: 25px;
+    margin: 5% 25%;
 }
 
+.rent-text{
+    padding: 15px;
+    margin: 60px;
+}
 
+.rent-image{
+    size: 25rem;
+}
 
+.delete-bttn{
+    padding: 15px;
+    margin: 60px;
+} */
 
+.sub-info{
+    border: 2px groove black;
+    border-radius: 2em;
+    margin: 5% 35% ;
+    padding: 50px;
+}
 
+.rent-info{
+    border: 2px groove black;
+    border-radius: 2em;
+    margin: 5% 35% ;
+    padding: 50px;
+    
+}
 
+.sub-form{
+    border: 2px groove black;
+    border-radius: 2em;
+    margin: 5% 15%;
+    padding: 50px;
+}
 
-.delete-button{
+.rental-form{
+    border: 2px groove black;
+    border-radius: 2em;
+    margin: 5% 15%;
+    padding: 50px;
+}
 
+body {
+    background-image: linear-gradient(120deg, white, grey);
+    color: black;
+    font-family: 'poppins', sans-serif;
+    min-height: 20vh;
+}
+
+h1,h3{
+  
+    margin: 5% 34%;
+    padding: 10px;
 }

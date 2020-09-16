@@ -26,7 +26,7 @@ class Rental {
         subscriber id: ${this.subscriber_id}  
         </li>
         <li class="rent-text">
-        <img src="${this.poster}">
+        <img src="${this.poster}" class="rent-image">
         </li>
         <li class="rent-text">
         title:${this.title}
@@ -41,7 +41,6 @@ class Rental {
         rental price:${this.rental_price}
         </li>    
         </ul> 
-        <h1>---------------------------</h1>
         </div> 
 
         `;

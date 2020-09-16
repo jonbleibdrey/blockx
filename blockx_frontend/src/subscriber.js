@@ -23,7 +23,6 @@ class Subscriber {
             <li class="sub-text">
             Email:${this.email}
             </li> 
-            <h1>--------------------------</h1>
         </ul> 
         <div class="delete-button"> 
         <button class="delete-bttn" data-id=${this.id} onclick="deleteSubscriber()"> Delete Subscriber </button>   
