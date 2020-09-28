@@ -18,7 +18,7 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.new(subscriber_params)
 
     if @subscriber.save
-      render json: @subscriber, status: :created, location: @subscriber
+      render json: @subscriber, status: :created, location: @subscriber, include:[:rentals]
     else
       render json: @subscriber.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class SubscribersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def subscriber_params
-      params.require(:subscriber).permit(:username, :email, :name)
+      params.require(:subscriber).permit(:username, :email, :photo)
     end
 end

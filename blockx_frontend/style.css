@@ -1,76 +1,8 @@
-/* * {
-
-    
-}
-
-body {
-    background-image: linear-gradient(120deg, black, white);
-    color: white;
-    font-family: 'poppins', sans-serif;
-    min-height: 100vh;
-}
-
-
-form {
-    min-height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-form input, form button{
-    padding: 0.5rem;
-    font-size: 2rem;
-    border: none;
-    background: white;
-}
-
-form button {
-    color: #F44336;
-    background: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-form button:hover{
-    background: #F44336;
-    color: white;
-}
-
-
-.sub-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem;
-    
-    color: black;
-    font-size: 1.5rem;
-    width: 400px;
-    border: 15px solid gold;
-    padding: 25px;
-    margin: 5% 25%;
-}
-
-.rent-text{
-    padding: 15px;
-    margin: 60px;
-}
-
-.rent-image{
-    size: 25rem;
-}
-
-.delete-bttn{
-    padding: 15px;
-    margin: 60px;
-} */
-
 .sub-info{
     border: 2px groove black;
     border-radius: 2em;
     margin: 5% 35% ;
-    padding: 50px;
+    padding: 50px
 }
 
 .rent-info{
@@ -105,5 +37,10 @@ body {
 h1,h3{
   
     margin: 5% 34%;
+    padding: 10px;
+}
+
+.h1Rental{
+    margin: 5% 15%;
     padding: 10px;
 }

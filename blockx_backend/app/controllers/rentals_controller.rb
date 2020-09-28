@@ -16,9 +16,8 @@ class RentalsController < ApplicationController
   # POST /rentals
   def create
     @rental = Rental.new(rental_params)
-
     if @rental.save
-      render json: @rental, status: :created, location: @rental
+      render json: @rental, include: [:subscriber], status: :created, location: @rental
     else
       render json: @rental.errors, status: :unprocessable_entity
     end
@@ -46,6 +45,6 @@ class RentalsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def rental_params
-      params.require(:rental).permit(:title, :poster, :description, :genre, :rental_price)
+      params.require(:rental).permit(:title, :poster, :description, :genre, :rental_price, :subscriber_id)
     end
 end
