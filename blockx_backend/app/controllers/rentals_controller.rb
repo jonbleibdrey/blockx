@@ -4,7 +4,6 @@ class RentalsController < ApplicationController
   # GET /rentals
   def index
     @rentals = Rental.all
-
     render json: @rentals
   end
 
@@ -16,11 +15,11 @@ class RentalsController < ApplicationController
   # POST /rentals
   def create
     @rental = Rental.new(rental_params)
-    if @rental.save
-      render json: @rental, include: [:subscriber], status: :created, location: @rental
-    else
+      if @rental.save
+        render json: @rental, include: [:subscriber], status: :created, location: @rental
+      else
       render json: @rental.errors, status: :unprocessable_entity
-    end
+      end
   end
 
   # PATCH/PUT /rentals/1

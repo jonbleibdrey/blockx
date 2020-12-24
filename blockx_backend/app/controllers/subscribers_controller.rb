@@ -36,6 +36,7 @@ class SubscribersController < ApplicationController
   # DELETE /subscribers/1
   def destroy
     @subscriber.destroy
+    render json: @subscriber
   end
 
   private

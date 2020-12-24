@@ -11,15 +11,15 @@ const BASE_URL = "http://localhost:3000";
 
 function fetchSubscribers() {
   fetch(`${BASE_URL}/subscribers`)
-  .then((resp) => resp.json())
-  .then((subscribers) => {
-    for (const subscriber of subscribers) {
-      let s = new Subscriber(
-        subscriber.id,
-        subscriber.username,
-        subscriber.email,
-        subscriber.photo,
-        subscriber.rentals
+    .then((resp) => resp.json())
+    .then((subscribers) => {
+      for (const subscriber of subscribers) {
+        let s = new Subscriber(
+          subscriber.id,
+          subscriber.username,
+          subscriber.email,
+          subscriber.photo,
+          subscriber.rentals
         );
         s.renderSubscriber();
       }
@@ -31,40 +31,39 @@ function fetchSubscribers() {
 
 function createForm() {
   let subscribersForm = document.getElementById("subscribers-form");
-  subscribersForm.innerHTML += `
+    subscribersForm.innerHTML += `
         <div class="sub-form">
-        <h1>
-        Create Subscriber:
-        </h1>
-        <form>
-           Your Photo URL: <input type="text" id="photo" class="form">    
-           Username: <input type="text" id="username" class="form">   
-           Email: <input type="text" id="email"class="form"> 
-           <input type="submit" value="Create" > 
-        </form> 
-        <br>
+          <h1>
+            Create Subscriber:
+          </h1>
+          <form>
+            Your Photo URL: <input type="text" id="photo" class="form">    
+            Username: <input type="text" id="username" class="form">   
+            Email: <input type="text" id="email"class="form"> 
+              <input type="submit" value="Create" > 
+          </form> 
+          <br>
         </div>
         `;
   subscribersForm.addEventListener("submit", subscriberFormSubmission);
 }
 
-
 function subscriberFormSubmission() {
-  event.preventDefault();
-  let photo = document.getElementById("photo").value;
-  let username = document.getElementById("username").value;
-  let email = document.getElementById("email").value;
+    event.preventDefault();
+      let photo = document.getElementById("photo").value;
+      let username = document.getElementById("username").value;
+      let email = document.getElementById("email").value;
 
-  let subscriber = {
-    photo: photo,
-    username: username,
-    email: email,
+      let subscriber = {
+        photo: photo,
+        username: username,
+        email: email,
   };
 
   fetch(`${BASE_URL}/subscribers`, {
     method: "POST",
     headers: {
-      'Accept': "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(subscriber),
@@ -78,12 +77,11 @@ function subscriberFormSubmission() {
         subscriber.photo,
         subscriber.rentals
       );
-      s.renderSubscriber();
-      document.querySelector("#rentals-form").innerHTML = ''
-      Rental.rentalForm()
+        s.renderSubscriber();
+        document.querySelector("#rentals-form").innerHTML = "";
+        Rental.rentalForm();
     });
 }
-
 
 // read - fetch rentals index
 function fetchRentals() {
@@ -104,6 +102,3 @@ function fetchRentals() {
       }
     });
 }
-
-
-
